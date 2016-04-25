@@ -2,9 +2,14 @@
 Description=Minecraft server
 
 [Service]
+WorkingDirectory=/home/joshua5201/data/Minecraft/
 Type=forking
+MemoryAccounting=true
 MemoryLimit=2G
+
+# default cpu shares weight is 1024
+CPUAccounting=true
 CPUShares=512
-ExecStart=/home/joshua5201/data/Minecraft/start.sh
-ExecStop=/home/joshua5201/data/Minecraft/stop.sh
-PIDFile=/home/joshua5201/data/Minecraft/run.pid
+
+ExecStart=/bin/bash start.sh
+ExecStop=/bin/bash stop.sh
