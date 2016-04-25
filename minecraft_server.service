@@ -1,0 +1,10 @@
+[Unit]
+Description=Minecraft server
+
+[Service]
+Type=forking
+MemoryLimit=2G
+CPUShares=512
+ExecStart=/home/joshua5201/data/Minecraft/start.sh
+ExecStop=/home/joshua5201/data/Minecraft/stop.sh
+PIDFile=/home/joshua5201/data/Minecraft/run.pid
